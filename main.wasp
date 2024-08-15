@@ -1,0 +1,16 @@
+app hackerchatbot {
+  wasp: {
+    version: "^0.14.0"
+  },
+  title: "hackerchatbot"
+}
+
+route RootRoute { path: "/", to: ChatbotPage }
+page ChatbotPage {
+  component: import { ChatbotPage } from "@src/ChatbotPage"
+}
+
+action processMessage {
+  fn: import { processMessage } from "@src/actions.ts",
+  entities: []
+}
